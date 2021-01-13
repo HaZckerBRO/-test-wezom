@@ -12,8 +12,8 @@ import {
 } from './utils';
 import {defaultUsersFilterValues} from '../../components/contacts/formFilter/view';
 
-const View = ({usersList, isLoading, requestUsers}) => {
-	if (!usersList.length && !isLoading) {
+const View = ({usersList, isLoading, requestUsers, fetchError}) => {
+	if (!usersList.length && !isLoading && !fetchError) {
 		requestUsers();
 	}
 

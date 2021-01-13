@@ -5,7 +5,8 @@ import { View } from './view';
 const mapStateToProps = (state) => {
 	return {
 		isLoading: state.contacts.isLoading,
-		contactsView: state.contacts.contactsView
+		contactsView: state.contacts.contactsView,
+		fetchError: state.contacts.fetchError
 	};
 };
 

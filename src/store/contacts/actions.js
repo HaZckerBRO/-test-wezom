@@ -1,4 +1,12 @@
-import {SET_CONTACTS_VIEW, FETCH_USERS, REQUEST_POSTS, SHOW_LOADER, HIDE_LOADER} from './action.types';
+import {
+	SET_CONTACTS_VIEW,
+	FETCH_USERS,
+	REQUEST_POSTS,
+	SHOW_LOADER,
+	HIDE_LOADER,
+	SHOW_FETCH_ERROR,
+	HIDE_FETCH_ERROR,
+} from './action.types';
 
 export const setContactsView = (view) => {
 	return {
@@ -29,5 +37,17 @@ export const showLoader = () => {
 export const hideLoader = () => {
 	return {
 		type: HIDE_LOADER,
+	}
+};
+
+export const setFetchError = () => {
+	return {
+		type: SHOW_FETCH_ERROR,
+	}
+};
+
+export const hideFetchError = () => {
+	return {
+		type: HIDE_FETCH_ERROR,
 	}
 };

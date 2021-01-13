@@ -1,4 +1,4 @@
-import {SET_CONTACTS_VIEW, FETCH_USERS, SHOW_LOADER, HIDE_LOADER} from './action.types';
+import {SET_CONTACTS_VIEW, FETCH_USERS, SHOW_LOADER, SHOW_FETCH_ERROR, HIDE_FETCH_ERROR, HIDE_LOADER} from './action.types';
 // import { OActionTypes as app } from './actions';
 
 const getDefaultView = () => {
@@ -9,6 +9,7 @@ export const initialState = {
 	contactsView: getDefaultView(),
 	usersList: [],
 	isLoading: false,
+	fetchError: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -37,6 +38,20 @@ export const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				isLoading: false
+			}
+		}
+
+		case SHOW_FETCH_ERROR: {
+			return {
+				...state,
+				fetchError: true
+			}
+		}
+
+		case HIDE_FETCH_ERROR: {
+			return {
+				...state,
+				fetchError: false
 			}
 		}
 
