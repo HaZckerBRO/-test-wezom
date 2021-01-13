@@ -9,8 +9,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		setContactsView: () => {
-			dispatch(setContactsView())
+		setContactsView: (view) => {
+			dispatch(setContactsView(view))
 		},
 		requestUsers: () => {
 			dispatch(requestUsers())
