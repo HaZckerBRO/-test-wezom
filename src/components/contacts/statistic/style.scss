@@ -1,0 +1,57 @@
+.contacts__statistic {
+	background-color: white;
+	margin-top: 50px;
+	padding: 20px;
+}
+
+.contacts__statistic > .size {
+	position: relative;
+	display: flex;
+	margin-top: 35px;
+	padding-bottom: 30px;
+}
+
+.contacts__statistic > .size > .size_item {
+	display: flex;
+	flex-direction: column;
+	margin-right: 40px
+}
+
+.size_item > .label {
+	color: gray;
+}
+
+.size_item > .value {
+	font-size: 28px;
+	margin: 10px 0;
+}
+
+.size_item > .additional {
+	position: absolute;
+	bottom: 15px;
+}
+
+.nationalities > .title {
+	margin: 10px 0;
+	font-size: 18px;
+	color: gray;
+}
+
+.nat_items {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nat_item {
+	padding: 5px;
+	min-width: 300px;
+	margin-bottom: 15px;
+}
+
+.nat_item > .label {
+	font-weight: bold;
+}
+
+.nat_item > .value {
+	margin-left: 10px;
+}

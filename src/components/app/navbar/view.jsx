@@ -6,6 +6,7 @@ import { routes } from 'routes';
 const View = () => {
 	const navbarRoutes = useMemo(() => [
 		{ name: 'Home', key: 'home' },
+		{ name: 'Contacts', key: 'contacts' },
 	], []);
 
 	return (
@@ -13,7 +14,13 @@ const View = () => {
 			<ul className={'navbar__list'}>
 				{navbarRoutes.map((route) => (
 					<li key={route.key} className={'navbar__item'}>
-						<NavLink to={routes[route.key].link()} className={'navbar__link'}>{route.name}</NavLink>
+						<NavLink
+							to={routes[route.key].link()}
+							className={'navbar__link'}
+							exact
+						>
+							{route.name}
+						</NavLink>
 					</li>
 				))}
 			</ul>

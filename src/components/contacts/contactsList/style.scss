@@ -1,0 +1,57 @@
+.contacts__list {
+	margin-top: 20px;
+	padding: 20px;
+	background-color: #fff;
+	width: 100%;
+}
+
+.table-view .thumbnail {
+	border-radius: 50%;
+}
+
+.tiled-view {
+	//display: flex;
+	//flex-wrap: wrap;
+}
+
+.tiled-view .user-item {
+	display: inline-block;
+	width: 300px;
+	margin: 20px;
+	border: 2px solid transparent;
+	transition: box-shadow .3s;
+	&:hover {
+		box-shadow: 0px 0px 10px 5px rgba(56, 56, 56, 0.2);
+	}
+}
+
+.tiled-view .thumbnail {
+	width: 100%;
+}
+
+.tiled-view .contacts {
+	display: flex;
+	flex-direction: column;
+	& a, b, p {
+		padding: 5px 15px;
+	}
+}
+
+.tiled-view .nationality {
+	margin: 5px 15px;
+}
+
+.user-item .title {
+	margin: 15px 15px 0;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed silver;
+}
+
+.user-item .title > .name {
+	font-weight: bold;
+	font-size: 16px;
+	color: #3597ff;
+	margin-right: 10px;
+}
+
+
