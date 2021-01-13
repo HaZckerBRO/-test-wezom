@@ -5,7 +5,7 @@ import './style.scss';
 import {TiledView} from './tiledView';
 import {Loader} from '../../app/loader';
 
-const View = ({usersList, contactsView, isLoading}) => {
+const View = ({usersList, contactsView, isLoading, fetchError}) => {
 	const users = getDataFromResults(usersList);
 	const columns = getColumnOptions();
 
@@ -38,6 +38,10 @@ const View = ({usersList, contactsView, isLoading}) => {
 			{isLoading
 				? <Loader />
 				: getView()
+			}
+			{fetchError
+				? <div className="error">A network error has occurred, please try again later</div>
+				: null
 			}
 		</div>
 	);

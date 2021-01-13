@@ -1,6 +1,6 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import {randomIntegerInRange} from '../utils';
-import {hideLoader, setUsersList, showLoader} from './contacts/actions';
+import {hideFetchError, hideLoader, setFetchError, setUsersList, showLoader} from './contacts/actions';
 import {REQUEST_POSTS} from './contacts/action.types';
 
 export {
@@ -12,10 +12,17 @@ function* sagaWatcher() {
 }
 
 function* sagaWorker() {
-	yield put(showLoader());
-	const payload = yield call(fetchUsers);
-	yield put(setUsersList(payload.results));
-	yield put(hideLoader())
+	try {
+		yield put(showLoader());
+		const payload = yield call(fetchUsers);
+		yield put(setUsersList(payload.results));
+		yield put(hideFetchError());
+		yield put(hideLoader())
+	}
+	catch (e) {
+		yield put(hideLoader());
+		yield put(setFetchError());
+	}
 }
 
 
