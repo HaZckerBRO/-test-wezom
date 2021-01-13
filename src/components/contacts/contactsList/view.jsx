@@ -39,11 +39,6 @@ const View = ({usersList, contactsView, isLoading}) => {
 				? <Loader />
 				: getView()
 			}
-
-			{/*{contactsView === 'tabular'*/}
-			{/*	? table*/}
-			{/*	: tiled*/}
-			{/*}*/}
 		</div>
 	);
 };
